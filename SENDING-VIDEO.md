@@ -39,6 +39,12 @@ Keep OBS and Blender on the same GPU. If the Tools menu entry is missing, check 
 
 For OBS on Mac, use this NDI route. A Syphon Capture source receives video; it does not itself publish an OBS Syphon output. [Current DistroAV menu labels](https://github.com/DistroAV/DistroAV/blob/master/data/locale/en-US.ini).
 
+## Museum atlas size
+
+After a small reception check, use **4019 × 2899** as the sending composition/canvas size for the included room, if your app/edition supports it. Keep the full atlas, including unused/black areas; do not crop or fit individual walls automatically. In Resolume change Composition Settings; in TouchDesigner set the final upstream TOP resolution; in OBS change the base/output canvas deliberately. For mapping checks at another size preserve the 4019:2899 aspect ratio. Blender's preview-quality setting scales the received image but does not change the room UVs.
+
+The venue's full 8038 × 5798 NDI master is separate and exceeds this preview receiver's 16-megapixel image limit.
+
 ## Check reception
 
 Blender should show **Live** and the incoming dimensions. Its displayed preview may be smaller because of the preview-quality setting. Keep the sending app running. Source discovery alone does not prove that frames are arriving.

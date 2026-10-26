@@ -54,3 +54,11 @@ The displayed preview is capped at 16 megapixels. Spout incoming textures are al
 Choose **Show error log** or **Export support log** in Advanced. Show error log opens Blender's Text Editor; use **Shift+F5** to return that area to the 3D View. Reports include versions, protocol, source names, dimensions and available error traces. Home-directory paths are masked, but other machine/network details can remain. Review before sharing.
 
 Logs stay on your computer until you choose to share them. The add-on has no automatic log upload. See [BUG-REPORT.md](BUG-REPORT.md).
+
+## Museum dimensions and resolution
+
+Use the provided Museum-room.blend. Its walls and floor keep the existing geometry, transforms and all UV layers. Seven room surfaces are preselected; Apply to selected objects assigns the receiver material without rebuilding them. Numpad 0 shows the interior camera. The packed reference works offline. To show the same reference through the receiver, choose Image or video file, load Museum-mapping-reference.png, then return to your live input when ready.
+
+The modeled bounding dimensions are approximately 28.69 × 16.99 × 6 m. The preview atlas is 4019 × 2899; the supplied rider specifies 8038 × 5798 for the venue master (pages 2–3 and 5). Half width/height gives one quarter of the pixels, preserving normalized UV placement. Smaller video outputs are useful for connection checks; use the same aspect ratio for meaningful mapping checks. The included moving 1280 × 720 test pattern checks frame reception and is not a museum atlas.
+
+The half-resolution atlas has about 11.65 megapixels and fits the receiver's 16-megapixel limit. The full venue canvas has about 46.6 megapixels: do not treat this receiver as a full-resolution venue preview or sender. Keep the venue master in your production app, and arrange its required NDI output separately with venue technicians. The original technical-rider PDF is not bundled. Separate stage/gauze screen geometry is not included.

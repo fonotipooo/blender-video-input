@@ -1,15 +1,15 @@
 # Suggested AI installation prompt
 
-Copy this into an AI assistant that can help with your computer, or ask it to guide you manually:
+Copy this into an AI assistant:
 
 ---
 
-Help me install and run Live Video Input for Blender from https://github.com/fonotipooo/blender-video-input . Read README.md and START-HERE.md first. Check my operating system, processor architecture and Blender version; this beta targets Blender 5.2 LTS.
+Help me install the museum room preview kit from https://github.com/fonotipooo/blender-video-input. Read README.md and START-HERE.md. Check my operating system, processor and Blender version; the existing add-on targets Blender 5.2 LTS.
 
-Download Blender-Video-Input-0.3.0-beta.zip from GitHub Releases and install it with Blender's Install from Disk. Keep the ZIP compressed. Preserve my working scenes and preferences. This is a standalone add-on: do not expect any bundled scene, geometry or project media.
+Download Museum-room-kit-0.3.0-beta.zip from https://github.com/fonotipooo/blender-video-input/releases/tag/v0.3.0-museum-kit, extract the outer kit, and install the inner Blender-Video-Input-0.3.0-beta.zip with Blender's Install from Disk. Preserve my working scenes and preferences. Use the provided Museum-room.blend; do not rebuild its geometry or UV mapping. Do not use any private performance visuals or project files.
 
-Select a mesh, open N > Video Input, choose Apply to selected objects, switch to Material Preview, and verify the moving Test pattern. Ask whether I use Resolume, TouchDesigner, OBS or another app if I have not specified it, then follow that app's section in SENDING-VIDEO.md. Start with a 1280 x 720 test output. Choose the named source, connect, check moving frames and dimensions, and test disconnect/reconnect.
+Open Museum-room.blend, select its seven room surfaces, choose N > Video Input > Apply to selected objects, switch to Material Preview, and check the moving Test pattern. The room is about 28.69 × 16.99 × 6 m. Its preview atlas is 4019 × 2899; the venue master is 8038 × 5798, outside the full-resolution preview limit of this receiver. Ask which sender app I use if unspecified, and follow SENDING-VIDEO.md. Start small to verify reception, then use the museum atlas dimensions if my sending app/edition supports them. Verify source selection, moving frames and disconnect/reconnect.
 
-Mac Syphon and Linux operation still need hardware validation; report only what you actually verify. NDI requires its official matching runtime. If something fails, show the error and help me export a support log, leaving sharing it to me. Explain any action you cannot perform and give me the next manual step. Do not upload my scenes, media, logs or personal files.
+Mac Syphon and Linux still need hardware testing. NDI needs its official matching runtime. Report only what you actually verify. If anything fails, show the error and help export a support log for me to review. Do not upload my scenes, visuals, logs or personal files.
 
 ---

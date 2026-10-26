@@ -1,9 +1,7 @@
 # Distribution and local data
 
-This repository and its release contain only add-on source, required third-party dependencies, licenses and generic documentation.
+The museum kit contains the existing room geometry/UV mapping, neutral packed mapping reference, unchanged Live Video Input 0.3.0 add-on, dependencies, licenses and setup guides.
 
-No scenes, geometry, user media, screenshots, technical riders, machine configurations or personal logs are bundled.
+No performance visuals, Score project, personal media, personal logs, source-machine paths, old sender names, machine configuration or technical-rider PDF are included. The shared room copy has its old connection settings removed; its mesh, transforms and UV coordinates are preserved.
 
-The add-on stores connection settings in your Blender scene and writes rotating support logs on your computer. It uses a temporary local folder for its capture worker. NDI discovery/reception communicates with video senders as expected for that protocol.
-
-There is no automatic telemetry or log-upload feature. Exporting a support log creates a file you control. Home-directory paths are masked, but source names, network details and other paths may appear. Review any exported log before choosing to attach it to a public issue.
+The add-on stores connection settings in the scene and writes support logs locally. NDI discovery/reception communicates with video senders as expected. No automatic telemetry or log-upload feature exists. Review exported logs before sharing them: source names, network information and other paths can appear.

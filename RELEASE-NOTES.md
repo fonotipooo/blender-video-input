@@ -1,15 +1,11 @@
-# Live Video Input 0.3.0 beta
+# Museum room kit — existing 0.3.0 beta add-on
 
-Standalone Blender 5.2 LTS add-on for live video textures on selected mesh objects.
+This packaging update adds the existing museum room and its neutral mapping reference. The add-on ZIP is the same previously tested 0.3.0 file; no receiver code, mesh coordinates, transforms or UVs were rebuilt.
 
-- Spout on Windows, Syphon on macOS, NDI, local media and moving test-pattern inputs.
-- Apply a video material to selected meshes, or choose an existing material/texture node.
-- Source discovery, Connect/Disconnect, actual frame dimensions and preview controls.
-- Local error display and manually exported support reports.
-- Short installation guide, sender instructions ordered **Resolume, TouchDesigner, OBS**, and a copyable AI installation prompt.
+Download **Museum-room-kit-0.3.0-beta.zip** and extract it. Install its inner **Blender-Video-Input-0.3.0-beta.zip** in Blender, open **Museum-room.blend**, and follow START-HERE.md. The seven room surfaces are preselected; click Apply to selected objects to connect the existing scene to the standalone receiver.
 
-**Install Blender-Video-Input-0.3.0-beta.zip** from this release using Blender's Install from Disk. GitHub's automatic source archive is for developers.
+Room: about **28.69 × 16.99 × 6 m**. Preview canvas: **4019 × 2899**. Venue canvas: **8038 × 5798**. Half width and height gives one quarter of the pixels; geometry stays full scale.
 
-This download contains only add-on code, required dependencies, licenses and generic documentation. No scene, geometry, media, screenshot, technical rider, user configuration or personal log is included.
+Only the room, neutral reference, receiver, licenses and guides are included. Performance visuals, personal files, old sender settings and technical-rider PDF are excluded.
 
-Windows functional checks pass with changing Spout/NDI frames and reconnection. Mac/Linux hardware validation and full-resolution sustained performance remain pending. See VALIDATION.md and PRIVACY.md in the repository.
+Prior Windows checks passed. Installation of this uploaded kit will be checked after publication and recorded in VALIDATION.md. Mac/Linux hardware testing and sustained full-resolution throughput remain pending.

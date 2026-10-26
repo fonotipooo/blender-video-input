@@ -1,45 +1,54 @@
-# Live Video Input for Blender
+# Museum room + Live Video Input for Blender
 
-A standalone Blender add-on for applying live video textures to selected mesh objects. Receive **Spout** on Windows, **Syphon** on macOS, or **NDI** on the supported platforms. Local images/movies and a moving test pattern are included as input options.
+Preview your live visuals on the included museum room, using Spout (Windows), Syphon (Mac), NDI, local media or a moving test pattern.
 
-**[Download the beta add-on](https://github.com/fonotipooo/blender-video-input/releases)** · **[10-step setup](START-HERE.md)** · **[Resolume / TouchDesigner / OBS](SENDING-VIDEO.md)** · **[AI installation prompt](AI-INSTALL-PROMPT.md)**
+**[Download the complete museum kit](https://github.com/fonotipooo/blender-video-input/releases/tag/v0.3.0-museum-kit)** · **[10-step setup](START-HERE.md)** · **[Resolume / TouchDesigner / OBS](SENDING-VIDEO.md)** · **[AI installation prompt](AI-INSTALL-PROMPT.md)**
 
-## Quick setup
+## Start here
 
-Install **Blender-Video-Input-0.3.0-beta.zip** from Releases using **Preferences > Add-ons > Install from Disk**, and enable **Live Video Input**. Select a mesh, open **N > Video Input**, click **Apply to selected objects**, and switch the viewport to **Material Preview**. Choose **Test pattern > Connect** to verify reception before configuring a sender.
+Download **Museum-room-kit-0.3.0-beta.zip** from the linked release and extract the outer ZIP. Install the inner **Blender-Video-Input-0.3.0-beta.zip** using **Preferences > Add-ons > Install from Disk**, and enable **Live Video Input**. Open **Museum-room.blend**. Its seven room surfaces are selected: press **N > Video Input > Apply to selected objects**, switch to **Material Preview**, and choose **Test pattern > Connect**.
 
-The release contains **only the add-on**. It does not include a Blender scene, geometry, media files, screenshots, technical riders, personal logs or user project data. Use it with your own scene and UV mapping. GitHub's automatic source archive is for developers; install the named release ZIP above.
+The kit reuses the existing working room geometry and the previously tested 0.3.0 add-on. Neither the mesh nor the UV mapping nor the add-on code was rebuilt. The scene copy has old connection settings and private paths removed. It contains a neutral packed mapping reference, with no performance visuals, user media, Score project, personal logs or technical-rider PDF.
 
-## Compatibility - 0.3.0 beta
+## What is included
 
-Target: **Blender 5.2 LTS**. The Mac Syphon dependencies require macOS 12+ and Blender's Python 3.13.
+- **Museum-room.blend**: full-scale walls and floor, existing UVs and camera views.
+- **Museum-mapping-reference.png**: a neutral atlas for testing alignment.
+- **Blender-Video-Input-0.3.0-beta.zip**: unchanged installable extension.
+- Short installation instructions, sender guides, troubleshooting, AI installation prompt and checksums.
+
+Install the inner add-on ZIP, not the outer kit or GitHub's automatic Source code archive. The add-on also works with your own geometry.
+
+## Geometry and canvas
+
+| Item | Size |
+| --- | --- |
+| Modeled room bounding dimensions | Approximately **28.69 × 16.99 × 6 m** |
+| Museum preview canvas | **4019 × 2899 pixels** |
+| Venue master canvas | **8038 × 5798 pixels** |
+
+Half the width and height means **one quarter of the pixels**, while physical geometry stays full scale. This is useful for preview performance; it does not replace the full-resolution venue master. The room contains walls and floor; separate stage/gauze screens are not modeled. See [geometry details](Museum-geometry-details.json) and [more about the dimensions](LEARN-MORE.md#museum-dimensions-and-resolution).
+
+The supplied venue rider specifies one 8038 × 5798 NDI stream for the venue. Local Spout/Syphon preview is a separate workflow. The receiver caps preview images and Spout inputs at 16 megapixels, so the full 46.6-megapixel venue master is not a supported full-resolution preview target. Use the half-size canvas for this kit.
+
+## Compatibility — beta
+
+Target: **Blender 5.2 LTS**. Mac Syphon dependencies require macOS 12+ and Blender's Python 3.13.
 
 | System | Live inputs | Validation |
 | --- | --- | --- |
-| Windows x64 | Spout, NDI | Functional checks; see VALIDATION.md |
-| macOS Intel / Apple Silicon | Syphon, NDI | Implemented; Mac hardware tests pending |
-| Linux x64 | NDI | Implemented; Linux hardware tests pending |
+| Windows x64 | Spout, NDI | Prior functional and installed-ZIP checks pass |
+| macOS Intel / Apple Silicon | Syphon, NDI | Implemented; hardware testing pending |
+| Linux x64 | NDI | Implemented; hardware testing pending |
 
-Spout and Syphon connect applications on the same computer. NDI can also receive network video and needs a separately installed official runtime. Full-resolution sustained performance is not benchmarked.
-
-## Controls
-
-- Apply a video material to selected meshes, or choose an existing material and Image Texture node under Advanced.
-- Choose an input and source; refresh, connect, or disconnect.
-- See actual received and displayed preview dimensions.
-- Adjust preview quality, maximum FPS and vertical orientation.
-- Show or export local error logs when requesting help.
-
-Applying the material is undoable and changes the material assignments of selected objects. Keep a saved copy of your working scene as usual. Local movie playback follows Blender's timeline and codec support.
+NDI needs a separately installed official matching runtime. The test pattern works offline. Full-resolution sustained performance is not benchmarked. The installation check of this newly published room kit is tracked in [VALIDATION.md](VALIDATION.md).
 
 ## Help
 
-Read [SENDING-VIDEO.md](SENDING-VIDEO.md), in the order **Resolume, TouchDesigner, OBS**, or [LEARN-MORE.md](LEARN-MORE.md). You can also copy the [AI installation prompt](AI-INSTALL-PROMPT.md).
+Start the sender using [Resolume, TouchDesigner, then OBS instructions](SENDING-VIDEO.md), choose the matching input/source in Blender, and Connect. For errors use **Advanced and troubleshooting > Show error log** or **Export support log**. Logs stay local until you choose to share them; review source names and network details first. Report problems in [Issues](https://github.com/fonotipooo/blender-video-input/issues) using [BUG-REPORT.md](BUG-REPORT.md).
 
-For problems, open **Video Input > Advanced and troubleshooting > Export support log**, review the file, and open a [GitHub issue](https://github.com/fonotipooo/blender-video-input/issues) using [BUG-REPORT.md](BUG-REPORT.md). Logs remain on your computer until you choose to share them. Source names and machine/network details may appear in an exported report.
+## Source and notices
 
-## Source and licenses
+Add-on source is in [blender_video_input/](blender_video_input/), under **GPL-3.0-or-later**; see [LICENSE.txt](LICENSE.txt). Bundled dependencies retain their licenses in [THIRD-PARTY-NOTICES.md](blender_video_input/THIRD-PARTY-NOTICES.md). The code license does not replace existing rights in the museum model. The room is a preview model, not a certified architectural survey.
 
-The source is in [blender_video_input/](blender_video_input/). The add-on code uses **GPL-3.0-or-later**; see [LICENSE.txt](LICENSE.txt). Bundled Spout, Syphon and PyObjC dependencies retain their own licenses and notices in [THIRD-PARTY-NOTICES.md](blender_video_input/THIRD-PARTY-NOTICES.md).
-
-NDI runtime binaries and NDI Tools are not bundled. Obtain the official matching runtime or SDK from [NDI](https://ndi.video/). NDI® is a registered trademark of Vizrt NDI AB.
+NDI runtime binaries and NDI Tools are not bundled. Obtain the matching runtime/SDK from [NDI](https://ndi.video/). NDI® is a registered trademark of Vizrt NDI AB.

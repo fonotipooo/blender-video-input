@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 *.blend
+!Museum-room.blend
 *.blend1
 *.log
 .DS_Store
