@@ -19,4 +19,16 @@ NDI requires a separately installed official matching runtime. The release does 
 
 The existing room meshes/transforms/UVs were copied intact into a clean scene container to exclude old connection/tool history. A geometry/UV signature matched before and after copying. Only the neutral mapping image is packed, and embedded private path/sender checks pass. Receiver code and its installable 0.3.0 ZIP are unchanged.
 
-**Post-publication installation check: pending.** This page will be updated after downloading and installing the published kit.
+**Post-publication installation check: PASSED on Windows x64, Blender 5.2.3 LTS (2026-10-25).**
+
+The museum kit was downloaded from its published GitHub release asset, and its SHA-256 plus the inner installer, room and mapping-image checksums matched. The inner ZIP was installed and enabled through Blender's extension installer in a fresh, isolated extension repository, with separate configuration and a writable test temporary folder.
+
+- Museum-room.blend opens as a normal scene with all seven room surfaces preselected and its interior camera available.
+- The existing mesh bounding dimensions remain approximately 28.69 × 16.99 × 6 m; only the neutral 4019 × 2899 reference image is packed.
+- Apply to selected objects assigns the receiver material to all seven surfaces.
+- The moving test pattern delivers four distinct frames at 1280 × 720 (640 × 360 preview); disconnect and reconnect both pass, with four distinct frames after reconnect.
+- The local mapping reference loads at the full 4019 × 2899 half-resolution atlas size.
+- Geometry coordinates, transforms and every UV layer match the preserved working-room signature after all checks.
+- Support-report home-path masking passes, and the downloaded room renders with the neutral mapping reference.
+
+This is a Windows installation/reception check. It does not certify native Mac/Linux operation, every sender-app combination, sustained high-resolution throughput or venue operation.

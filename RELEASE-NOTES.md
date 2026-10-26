@@ -8,4 +8,4 @@ Room: about **28.69 × 16.99 × 6 m**. Preview canvas: **4019 × 2899**. Venue c
 
 Only the room, neutral reference, receiver, licenses and guides are included. Performance visuals, personal files, old sender settings and technical-rider PDF are excluded.
 
-Prior Windows checks passed. Installation of this uploaded kit will be checked after publication and recorded in VALIDATION.md. Mac/Linux hardware testing and sustained full-resolution throughput remain pending.
+Prior Windows checks passed. The published kit was downloaded, checksum-verified, installed and tested successfully on Windows with Blender 5.2.3 LTS. The room loads, all seven surfaces receive changing test frames, reconnect works, the 4019 × 2899 reference loads, and geometry/transforms/UVs stay intact. See VALIDATION.md. Mac/Linux hardware testing and sustained full-resolution throughput remain pending.
