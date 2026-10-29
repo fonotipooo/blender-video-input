@@ -97,9 +97,12 @@ def discover(wait_ms=0):
         lib.NDIlib_find_wait_for_sources(_finder, wait_ms)
     count = C.c_uint32()
     sources = lib.NDIlib_find_get_current_sources(_finder, C.byref(count))
-    return [(sources[i].name.decode('utf8'),
-             sources[i].url.decode('utf8') if sources[i].url else '')
-            for i in range(count.value)]
+    # Local multicast and explicit loopback can list the same endpoint twice.
+    # Keep distinct endpoints (which remain ambiguous) while collapsing exact repeats.
+    return list(dict.fromkeys(
+        (sources[i].name.decode('utf8'),
+         sources[i].url.decode('utf8') if sources[i].url else '')
+        for i in range(count.value)))
 
 
 def close_finder():

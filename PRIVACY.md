@@ -1,6 +1,6 @@
 # Distribution and local data
 
-The museum kit contains the existing room geometry/UV mapping, neutral packed mapping reference, unchanged Live Video Input 0.3.0 add-on, dependencies, licenses and setup guides.
+The museum kit contains the existing room geometry/UV mapping, neutral packed mapping reference, Live Video Input 0.3.1 add-on, dependencies, licenses and setup guides.
 
 No performance visuals, Score project, personal media, personal logs, source-machine paths, old sender names, machine configuration or technical-rider PDF are included. The shared room copy has its old connection settings removed; its mesh, transforms and UV coordinates are preserved.
 

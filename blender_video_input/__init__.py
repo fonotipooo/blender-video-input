@@ -1,6 +1,6 @@
 bl_info = {
     'name': 'Live Video Input', 'author': 'Contributors',
-    'version': (0, 3, 0), 'blender': (5, 2, 0),
+    'version': (0, 3, 1), 'blender': (4, 5, 0),
     'location': '3D View > Sidebar > Video Input',
     'description': 'Apply live Spout, Syphon, NDI or local video textures to selected objects',
     'category': 'Material',
@@ -444,7 +444,7 @@ class BVI_PT_video(bpy.types.Panel):
             for line in textwrap.wrap('NDI® is a registered trademark of Vizrt NDI AB',width=width):
                 layout.label(text=line)
         if scene.bvi_video_protocol=='SYPHON':
-            for line in textwrap.wrap('Mac receiver: experimental; hardware testing pending',width=width):
+            for line in textwrap.wrap('Mac Syphon preview; see VALIDATION.md for tested systems',width=width):
                 layout.label(text=line,icon='INFO' if line.startswith('Mac') else 'NONE')
         row=layout.row(align=True)
         row.operator('bvi.video_connect',text='Load' if scene.bvi_video_protocol=='FILE' else 'Connect',icon='LINKED')
@@ -473,7 +473,7 @@ class BVI_PT_video(bpy.types.Panel):
                 col.label(text='Disconnect and reconnect after changing it')
             col.operator('bvi.video_view_log',icon='TEXT')
             col.operator('bvi.video_export_log',icon='EXPORT')
-            col.label(text='Live Video Input 0.3.0 beta')
+            col.label(text='Live Video Input 0.3.1 beta')
 
 
 @persistent
@@ -525,7 +525,7 @@ def _logger():
     return _log_instance
 
 def _diagnostic_text(scene):
-    text='Live Video Input 0.3.0 beta\n'+json.dumps(dict(blender=bpy.app.version_string,python=platform.python_version(),system=platform.system(),architecture=platform.machine(),protocol=scene.bvi_video_protocol,status=scene.bvi_capture_status,source=_selected(scene),received=_state['source_size'],preview=_state['preview_size'],frames=_state['frames'],worker_status=_state['last_worker_status']),indent=2)+'\n\n'
+    text='Live Video Input 0.3.1 beta\n'+json.dumps(dict(blender=bpy.app.version_string,python=platform.python_version(),system=platform.system(),architecture=platform.machine(),protocol=scene.bvi_video_protocol,status=scene.bvi_capture_status,source=_selected(scene),received=_state['source_size'],preview=_state['preview_size'],frames=_state['frames'],worker_status=_state['last_worker_status']),indent=2)+'\n\n'
     paths=[_log_path()]
     if _state['directory']:
         paths += [_state['directory']/'worker.log',_state['directory']/'status.json']
@@ -585,7 +585,7 @@ def register():
     if os.name=='nt':
         items.append(('SPOUT','Spout (Windows)','Receive video from another app on this PC'))
     if sys.platform=='darwin':
-        items.append(('SYPHON','Syphon (Mac, experimental)','Receive a local Syphon sender; Mac hardware validation pending'))
+        items.append(('SYPHON','Syphon (Mac)','Receive a local Syphon sender on this Mac'))
     items.append(('NDI','NDI®','Receive local or network video; requires the official NDI runtime'))
     S.bvi_video_protocol=bpy.props.EnumProperty(name='Input',items=items,default='TEST',update=_protocol_changed)
     S.bvi_video_source=bpy.props.EnumProperty(name='Source',items=_source_items,get=_source_get,set=_source_set)

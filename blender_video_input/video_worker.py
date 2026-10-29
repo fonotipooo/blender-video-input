@@ -11,7 +11,6 @@ import struct
 import sys
 import time
 import traceback
-import zipfile
 import hashlib
 import logging
 
@@ -66,13 +65,9 @@ def run(directory, protocol, pid):
         if protocol == 'SYPHON':
             if sys.platform != 'darwin':
                 raise RuntimeError('Syphon is available on macOS only.')
-            if sys.version_info[:2] != (3, 13):
-                raise RuntimeError('Bundled Syphon requires Blender 5.2 with Python 3.13.')
+            from mac_dependencies import extract_mac_dependencies
             deps = directory/'mac-deps'
-            deps.mkdir(exist_ok=True)
-            for wheel in sorted(Path(__file__).with_name('wheels').glob('*.whl')):
-                with zipfile.ZipFile(wheel) as archive:
-                    archive.extractall(deps)
+            extract_mac_dependencies(Path(__file__).with_name('wheels'), deps)
             sys.path.insert(0, str(deps))
             import syphon_runtime as backend
             finder = backend.directory()

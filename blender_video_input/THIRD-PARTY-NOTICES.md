@@ -10,7 +10,7 @@ Spout is copyright Lynn Jarvis and contributors, under the BSD 2-Clause license.
 
 ## Syphon / syphon-python / PyObjC
 
-The unchanged wheels in wheels/ provide syphon-python 0.2.0 and PyObjC core, Cocoa and Metal 12.2.2 for Python 3.13, universal Intel/Apple Silicon. They are extracted locally only when Syphon is selected on macOS. No dependency installer or network download runs in Blender.
+The wheels in wheels/ provide syphon-python 0.2.0 and PyObjC core, Cocoa and Metal 12.2.2 for Python 3.11 and 3.13. The native Mac components include Intel/Apple Silicon code; PyObjC wheels are specific to the matching Python ABI. The Syphon worker selects the appropriate wheels and extracts them locally only when Syphon is selected on macOS. These dependencies require macOS 12+ for this kit. No dependency installer or network download runs in Blender. Blender supplies NumPy. Installed-ZIP synthetic Syphon reception passed on Apple M2 Pro arm64 / macOS 15.7.8 with Blender 4.5.12 / Python 3.11.11 and Blender 5.2.3 / Python 3.13.13; see VALIDATION.md in the museum kit for the full recorded environment and test scope. Bundled dependency availability alone does not establish hardware or sender-app validation.
 
 syphon-python is copyright Florian Bruggisser, under MIT. Source: https://github.com/cansik/syphon-python . Syphon.framework is copyright Tom Butterworth, Anton Marini and contributors, under a BSD license. The wheel retains the upstream license texts.
 

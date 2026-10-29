@@ -1,4 +1,4 @@
-"""macOS Metal receiver using the bundled syphon-python 0.3.0 wheels.
+"""macOS Metal receiver using the bundled syphon-python 0.2.0 wheel.
 
 Native Mac integration must be validated on Mac hardware before a stable release.
 """
